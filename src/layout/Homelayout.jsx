@@ -1,11 +1,11 @@
 import React from 'react';
 import { Outlet } from 'react-router';
-import Hearder from '../components/header/Hearder';
+import Header from '../components/header/Header';
 
 const Homelayout = () => {
     return (
         <div>
-            <Hearder></Hearder>
+            <Header></Header>
             <Outlet></Outlet>
         </div>
     );

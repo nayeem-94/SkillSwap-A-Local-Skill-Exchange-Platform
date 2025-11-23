@@ -1,12 +1,12 @@
 import React from 'react';
 import Navbar from './Navber';
 
-const Hearder = () => {
+const Header = () => {
     return (
         <div>
-            <Navbar></Navbar>
+            <Navbar />
         </div>
     );
 };
 
-export default Hearder;
+export default Header;

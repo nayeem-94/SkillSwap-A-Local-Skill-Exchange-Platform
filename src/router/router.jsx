@@ -2,10 +2,9 @@ import { createBrowserRouter } from "react-router"
 import App from "../App";
 import { Children } from "react";
 import Homelayout from "../layout/Homelayout";
-import Hearder from "../components/header/Hearder";
-import Home from "../components/header/home/Home";
 import Dashboard from "../components/profile/Dashboard";
 import Login from "../components/acess setup/login";
+import Home from "../components/Home/Home";
 
 const router = createBrowserRouter([
     {
