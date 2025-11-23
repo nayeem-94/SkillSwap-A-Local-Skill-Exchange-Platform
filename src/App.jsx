@@ -7,6 +7,7 @@ const App = () => {
         <div className="text-center lg:text-left">
           
           <h1 className="text-5xl font-bold">Login now!</h1>
+          <img className="w-32 h-32 mx-auto rounded-full"  src="../src/assets/logo.png" alt="" />
         </div>
         <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
           <div className="card-body">
