@@ -1,11 +1,11 @@
 import React from 'react';
 
-const profile = () => {
+const Logout = () => {
     return (
         <div>
-            this is my profile
+            i am logout page
         </div>
     );
 };
 
-export default profile;
+export default Logout;
