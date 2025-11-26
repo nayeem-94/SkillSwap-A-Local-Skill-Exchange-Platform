@@ -1,9 +1,10 @@
 import React from 'react';
+import Heroslider from './Heroslider';
 
 const Home = () => {
     return (
-        <div>
-            i am hommeeeeee
+        <div className='' >
+            <Heroslider ></Heroslider>
         </div>
     );
 };

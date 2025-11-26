@@ -4,7 +4,7 @@ import Test from './Test';
 
 const Header = () => {
     return (
-        <div className='' >
+        <div className='container mx-auto' >
                 <Navbar />
                 {/* <Test /> */}
             
