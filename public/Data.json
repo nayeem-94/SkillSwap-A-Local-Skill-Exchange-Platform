@@ -1,0 +1,122 @@
+[
+  {
+    "skillId": 1,
+    "skillName": "Beginner Guitar Lessons",
+    "providerName": "Alex Martin",
+    "providerEmail": "alex@skillswap.com",
+    "price": 20,
+    "rating": 4.8,
+    "slotsAvailable": 3,
+    "description": "Acoustic guitar classes for complete beginners, focusing on basic chords and rhythm.",
+    "image": "https://i.ibb.co.com/9HVtKvGm/gabriel-gurrola-2-Uuh-MZEChdc-unsplash.jpg",
+    "category": "Music"
+  },
+  {
+    "skillId": 2,
+    "skillName": "Spoken English Practice",
+    "providerName": "Sara Hossain",
+    "providerEmail": "sara@skillswap.com",
+    "price": 10,
+    "rating": 4.6,
+    "slotsAvailable": 5,
+    "description": "Conversational English sessions for non-native speakers to build confidence and fluency.",
+    "image": "https://i.ibb.co.com/Y4PFJF8K/timur-shakerzianov-Yl-PCH249q-HE-unsplash.jpg",
+    "category": "Language"
+  },
+  {
+    "skillId": 3,
+    "skillName": "Introduction to Python Coding",
+    "providerName": "Michael Chen",
+    "providerEmail": "michael@skillswap.com",
+    "price": 35,
+    "rating": 4.9,
+    "slotsAvailable": 1,
+    "description": "Learn Python fundamentals, data types, and control flow in a practical, project-based setting.",
+    "image": "https://i.ibb.co.com/Y4PFJF8K/timur-shakerzianov-Yl-PCH249q-HE-unsplash.jpg",
+    "category": "Technology"
+  },
+  {
+    "skillId": 4,
+    "skillName": "Vinyasa Yoga & Stretching",
+    "providerName": "Elena Rodriguez",
+    "providerEmail": "elena@skillswap.com",
+    "price": 15,
+    "rating": 4.7,
+    "slotsAvailable": 8,
+    "description": "Flow-style yoga classes focused on linking breath to movement and improving flexibility.",
+    "image": "https://i.ibb.co.com/Y4PFJF8K/timur-shakerzianov-Yl-PCH249q-HE-unsplash.jpg",
+    "category": "Fitness"
+  },
+  {
+    "skillId": 5,
+    "skillName": "Basic Car Maintenance",
+    "providerName": "David Johnson",
+    "providerEmail": "david@skillswap.com",
+    "price": 50,
+    "rating": 4.5,
+    "slotsAvailable": 2,
+    "description": "Hands-on workshop covering oil changes, tire pressure checks, and fluid top-ups.",
+    "image": "https://i.ibb.co.com/Y4PFJF8K/timur-shakerzianov-Yl-PCH249q-HE-unsplash.jpg",
+    "category": "Automotive"
+  },
+  {
+    "skillId": 6,
+    "skillName": "French Conversation Group (B1 Level)",
+    "providerName": "Chloé Dubois",
+    "providerEmail": "chloe@skillswap.com",
+    "price": 12,
+    "rating": 4.9,
+    "slotsAvailable": 4,
+    "description": "Intermediate French dialogue and discussion sessions to boost speaking confidence.",
+    "image": "https://i.ibb.co.com/Y4PFJF8K/timur-shakerzianov-Yl-PCH249q-HE-unsplash.jpg",
+    "category": "Language"
+  },
+  {
+    "skillId": 7,
+    "skillName": "Mobile Photography Workshop",
+    "providerName": "Leo Kim",
+    "providerEmail": "leo@skillswap.com",
+    "price": 25,
+    "rating": 4.4,
+    "slotsAvailable": 6,
+    "description": "Master composition, lighting, and editing techniques using only your smartphone camera.",
+    "image": "https://i.ibb.co.com/Y4PFJF8K/timur-shakerzianov-Yl-PCH249q-HE-unsplash.jpg",
+    "category": "Creative"
+  },
+  {
+    "skillId": 8,
+    "skillName": "Financial Budgeting 101",
+    "providerName": "Robert Grant",
+    "providerEmail": "robert@skillswap.com",
+    "price": 40,
+    "rating": 4.7,
+    "slotsAvailable": 3,
+    "description": "Learn to set financial goals, track expenses, and build a sustainable personal budget.",
+    "image": "https://i.ibb.co.com/Y4PFJF8K/timur-shakerzianov-Yl-PCH249q-HE-unsplash.jpg",
+    "category": "Finance"
+  },
+  {
+    "skillId": 9,
+    "skillName": "Basic Watercolour Painting",
+    "providerName": "Maya Sharma",
+    "providerEmail": "maya@skillswap.com",
+    "price": 30,
+    "rating": 4.8,
+    "slotsAvailable": 5,
+    "description": "An introduction to watercolour techniques, including washes and blending for landscapes.",
+    "image": "https://i.ibb.co.com/Y4PFJF8K/timur-shakerzianov-Yl-PCH249q-HE-unsplash.jpg",
+    "category": "Art"
+  },
+  {
+    "skillId": 10,
+    "skillName": "Coffee Brewing Mastery",
+    "providerName": "Ethan Miller",
+    "providerEmail": "ethan@skillswap.com",
+    "price": 22,
+    "rating": 4.9,
+    "slotsAvailable": 2,
+    "description": "Learn pour-over and French press techniques to brew café-quality coffee at home.",
+    "image": "https://i.ibb.co.com/Y4PFJF8K/timur-shakerzianov-Yl-PCH249q-HE-unsplash.jpg",
+    "category": "Culinary"
+  }
+]
