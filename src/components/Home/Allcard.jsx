@@ -19,12 +19,7 @@ const Allcard = () => {
                                 Explore a vibrant community of makers, teachers and learners. Find workshops, one-on-one lessons, and skill swaps — all close to you.
                             </p>
 
-                            {/* <div className="mt-6 flex flex-wrap gap-3">
-                                <span className="bg-white/20 px-3 py-1 rounded-full text-sm">Free & Paid</span>
-                                <span className="bg-white/20 px-3 py-1 rounded-full text-sm">Online & In-person</span>
-                                <span className="bg-white/20 px-3 py-1 rounded-full text-sm">Verified Members</span>
-                            </div> */}
-
+                            
                             <div className="mt-6 flex gap-3">
                                 <input
                                     aria-label="Search skills"
@@ -37,20 +32,7 @@ const Allcard = () => {
                             </div>
                         </div>
 
-                        {/* <div className="flex-1 flex justify-center">
-                            <div className="w-80 h-48 bg-white/10 rounded-xl p-4 backdrop-blur-sm shadow-lg flex flex-col justify-center items-start gap-3">
-                                <div className="text-xl font-semibold">Why SkillSwap?</div>
-                                <ul className="text-sm opacity-95 list-disc list-inside">
-                                    <li>Local connections & meetups</li>
-                                    <li>Flexible pricing — free to premium</li>
-                                    <li>Skill credits & swaps</li>
-                                </ul>
-                                <div className="mt-2 flex gap-2">
-                                    <span className="bg-white/20 px-2 py-1 rounded text-xs">🌍 Community</span>
-                                    <span className="bg-white/20 px-2 py-1 rounded text-xs">⭐ Trusted</span>
-                                </div>
-                            </div>
-                        </div> */}
+                        
                     </div>
                 </section>
 
@@ -63,6 +45,7 @@ const Allcard = () => {
                 ))}
             </div>
         </div>
+        
     );
 };
 

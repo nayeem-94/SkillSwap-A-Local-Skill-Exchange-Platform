@@ -17,7 +17,7 @@ const Navber = () => {
                 </div>
                 <div className='space-x-4'>
                     <span className=" font-medium  "> <NavLink to="/home">Home</NavLink> </span>
-                    <span className=" hidden md:inline font-medium  "> <NavLink to="/myprofile">My Profile</NavLink> </span>
+                    <span className="  font-medium  "> <NavLink to="/myprofile">My Profile</NavLink> </span>
                 </div>
                 <div className='flex gap-2' >
                     {isLoggedIn ? (
@@ -27,7 +27,6 @@ const Navber = () => {
                                     src={user.avatarUrl}
                                     alt="User Avatar"
                                     className="w-8 h-8 rounded-full border-2 border-indigo-500 cursor-pointer"
-                                // title={user.displayName} // Key requirement: Display name on hover
                                 />
                                 <span className="absolute -bottom-8 left-1/2 -translate-x-1/2  scale-0 group-hover:scale-100   bg-gray-800 text-white text-xs px-2 py-1  rounded-md whitespace-nowrap  transition-transform duration-100">
                                     {user.displayName}

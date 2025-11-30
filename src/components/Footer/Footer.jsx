@@ -59,7 +59,7 @@ const Footer = () => {
                     </a>
                 </div>
                 <div className='text-lg'>
-                    @All rights reserved © 2024
+                    @All rights reserved © 2025
                 </div>
             </nav>
 
