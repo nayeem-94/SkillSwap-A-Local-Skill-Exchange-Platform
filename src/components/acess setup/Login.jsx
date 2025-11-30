@@ -1,9 +1,52 @@
 import React from 'react';
+import { use, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router";
 
 const Login = () => {
     return (
-        <div>
-            I AM LOGIN
+        <div className="flex bg-cyan-50 justify-center min-h-screen items-center">
+            <div className="card bg-base-100 w-full  max-w-sm shrink-0 shadow-2xl py-7">
+                <h2 className="font-bold text-3xl text-center text-indigo-600">
+                    Login your account
+                </h2>
+                <form  className="card-body">
+                    <fieldset className="fieldset">
+                        {/* email  */}
+                        <label className="label">Email</label>
+                        <input
+                            name="email"
+                            type="email"
+                            className="input w-full"
+                            placeholder="Email"
+                            required
+                        />
+                        {/* passowrd  */}
+                        <label className="label">Password</label>
+                        <input
+                            name="password"
+                            type="password"
+                            className="input w-full"
+                            placeholder="Password"
+                            required
+                        />
+                        <div>
+                            <a className="link link-hover">Forgot password?</a>
+                        </div>
+
+                        {/* {error && <p className="text-red-400 text-xs">{error}</p>} */}
+
+                        <button type="submit" className="btn  mt-4 text-lg  text-white bg-indigo-600">
+                            Login
+                        </button>
+                        <p className="font-semibold text-center pt-5">
+                            Dont’t Have An Account ?{" "}
+                            <Link className="text-secondary" to="/register">
+                                Register
+                            </Link>
+                        </p>
+                    </fieldset>
+                </form>
+            </div>
         </div>
     );
 };
