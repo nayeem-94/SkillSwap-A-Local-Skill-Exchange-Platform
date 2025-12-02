@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Singelcart = ({ card }) => {
-    console.log(card);
+    // console.log(card);
     return (
         <div className="card bg-base-100 w-96 shadow-xl p-4  rounded-lg">
             <figure className=' h-[200px]'>
