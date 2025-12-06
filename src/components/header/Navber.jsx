@@ -1,13 +1,28 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { NavLink } from 'react-router';
+import { AuthContext } from '../../Provider/AuthProvider';
 
 const Navber = () => {
 
-    const [isLoggedIn, setIsLoggedIn] = useState(false); // Simulated auth state
-    const user = {
-        displayName: "Anya Forger",
-        avatarUrl: "https://i.pravatar.cc/150?img=12" // Placeholder avatar
+    const { user, logOut, } = useContext(AuthContext);
+    const isLoggedIn = !!user;
+
+
+    const userProfile = {
+        userName: user?.displayName?.trim() || "No name provided",
+        avatarUrl: user?.photoURL,
     };
+
+    const handleLogout = () => {
+        logOut()
+            .then(() => {
+                alert("You Logged Out successfully");
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    };
+
 
     return (
         <>
@@ -17,25 +32,32 @@ const Navber = () => {
                 </div>
                 <div className='space-x-4'>
                     <span className=" font-medium  "> <NavLink to="/home">Home</NavLink> </span>
-                    <span className="  font-medium  "> <NavLink to="/myprofile">My Profile</NavLink> </span>
+                    {
+                        // isLoggedIn ? ( <>
+                        <span className="  font-medium  "> <NavLink to="/dashboard">My Profile</NavLink> </span>
+                        // {/* </>) : (<></>) */}
+                    }
+
+                    {/* <span className="  font-medium  "> <NavLink to="/myprofile">My Profile</NavLink> </span> */}
+
                 </div>
                 <div className='flex gap-2' >
                     {isLoggedIn ? (
                         <>
                             <div className="relative group">
                                 <img
-                                    src={user.avatarUrl}
+                                    src={userProfile.avatarUrl}
                                     alt="User Avatar"
                                     className="w-8 h-8 rounded-full border-2 border-indigo-500 cursor-pointer"
                                 />
                                 <span className="absolute -bottom-8 left-1/2 -translate-x-1/2  scale-0 group-hover:scale-100   bg-gray-800 text-white text-xs px-2 py-1  rounded-md whitespace-nowrap  transition-transform duration-100">
-                                    {user.displayName}
+                                    {userProfile.userName}
                                 </span>
 
                             </div>
 
-                            <span className="px-3 py-1 text-sm font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 transition">
-                                <NavLink to="/logout">Logout</NavLink>
+                            <span onClick={handleLogout} className="px-3 py-1 text-sm font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 transition">
+                                <NavLink to="/home">Logout</NavLink>
                             </span>
 
                         </>

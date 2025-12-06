@@ -1,15 +1,16 @@
-import React, { use, useContext, useState } from "react";
-
+import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 const Login = () => {
-
     const [error, setError] = useState("");
-    const { signIn } = useContext(AuthContext);
+    const { signIn, setLoading } = useContext(AuthContext);
 
     const navigate = useNavigate();
+    const location = useLocation();
 
+    // The page the user tried to access before login
+    const from = location.state?.from?.pathname || "/";
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -17,64 +18,67 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
 
-        // console.log(email, password);
         signIn(email, password)
             .then((result) => {
                 const loggedUser = result.user;
-                console.log(loggedUser);
-                // form.reset();
-                //  navigate(`${location.state ? location.state : "/"}`);
+                // console.log("Logged in user:", loggedUser);
+                form.reset();
+                setLoading(true); // optional if you have a loading state
+
+                // Redirect to the original page or default "/"
+                navigate(from, { replace: true });
             })
             .catch((error) => {
-                const errorCode = error.code;
-                setError(errorCode);
+                console.error(error);
+                setError(error.message);
             });
-
     };
 
     return (
         <div className="flex bg-cyan-50 justify-center min-h-screen items-center">
-            <div className="card bg-base-100 w-full  max-w-sm shrink-0 shadow-2xl py-7">
+            <div className="card bg-base-100 w-full max-w-sm shadow-2xl py-7">
                 <h2 className="font-bold text-3xl text-center text-indigo-600">
-                    Login your account
+                    Login to your account
                 </h2>
-                <form onSubmit={handleLogin} className="card-body">
-                    <fieldset className="fieldset">
-                        {/* email  */}
-                        <label className="label">Email</label>
-                        <input
-                            name="email"
-                            type="email"
-                            className="input w-full"
-                            placeholder="Email"
-                            required
-                        />
-                        {/* passowrd  */}
-                        <label className="label">Password</label>
-                        <input
-                            name="password"
-                            type="password"
-                            className="input w-full"
-                            placeholder="Password"
-                            required
-                        />
-                        <div>
-                            <a className="link link-hover">Forgot password?</a>
-                        </div>
+                <form onSubmit={handleLogin} className="card-body flex flex-col gap-4">
+                    <label className="label">Email</label>
+                    <input
+                        name="email"
+                        type="email"
+                        className="input w-full"
+                        placeholder="Email"
+                        required
+                    />
 
-                        {/* {error && <p className="text-red-400 text-xs">{error}</p>} */}
+                    <label className="label">Password</label>
+                    <input
+                        name="password"
+                        type="password"
+                        className="input w-full"
+                        placeholder="Password"
+                        required
+                    />
 
-                        <button type="submit" className="btn  mt-4 text-lg  text-white bg-indigo-600">
-                            Login
-                        </button>
-                        <p className="font-semibold text-sm text-center pt-5">
-                            Dont’t Have An Account ?{" "}
-                            <Link className="text-secondary" to="/register">
-                                Register
-                            </Link>
-                        </p>
-                    </fieldset>
+                    <div>
+                        <a className="link link-hover">Forgot password?</a>
+                    </div>
+
+                    {error && <p className="text-red-500 text-sm">{error}</p>}
+
+                    <button
+                        type="submit"
+                        className="btn mt-4 text-lg text-white bg-indigo-600 hover:bg-indigo-700 transition"
+                    >
+                        Login
+                    </button>
                 </form>
+
+                <p className="font-semibold text-center pt-2">
+                    Don’t have an account?{" "}
+                    <Link className="text-indigo-600" to="/register">
+                        Register
+                    </Link>
+                </p>
             </div>
         </div>
     );

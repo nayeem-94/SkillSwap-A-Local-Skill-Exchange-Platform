@@ -8,6 +8,7 @@ import Home from "../components/Home/Home";
 import Header from "../components/header/Header";
 import Logout from "../components/acess setup/Logout";
 import Register from "../components/acess setup/Register";
+import PrivatRoute from "../Provider/PrivatRoute";
 
 const router = createBrowserRouter([
     {
@@ -25,8 +26,12 @@ const router = createBrowserRouter([
                 loader: ()=> fetch('/Data.json'),
             },
             {
-                path:"myprofile",
-                element: <Dashboard></Dashboard>
+                path:"dashboard",
+                element: (
+                    <PrivatRoute>
+                        <Dashboard />
+                    </PrivatRoute>
+                )
             },
             {
                 path:"login",

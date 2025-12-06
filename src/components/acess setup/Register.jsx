@@ -1,6 +1,6 @@
 import React from 'react';
 import { use, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router";
+import { Link, Navigate, useLocation, useNavigate } from "react-router";
 import { AuthContext } from '../../Provider/AuthProvider';
 
 const Register = () => {
@@ -8,6 +8,8 @@ const Register = () => {
     const { createUser } = use(AuthContext);
 
     const [nameError, setNameError] = useState("");
+
+    const navigate = useNavigate();
 
 
     const handleRegister = (e) => {
@@ -18,6 +20,8 @@ const Register = () => {
         const photourl = form.photourl.value;
         const email = form.email.value;
         const password = form.password.value;
+
+
 
         if (name.length < 5) {
             setNameError("Name should be more then 5 character");
@@ -30,12 +34,15 @@ const Register = () => {
             .then((result) => {
                 const createdUser = result.user;
                 console.log(createdUser);
+                navigate("/login");
             })
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
                 alert(errorMessage, errorCode);
             });
+
+           
 
     }
 
@@ -96,14 +103,16 @@ const Register = () => {
                         <button type="submit" className="btn  mt-4 text-lg  text-white bg-indigo-600">
                             Register
                         </button>
-                        <p className="font-semibold text-sm text-center pt-5">
-                            Already Have An Account ?{" "}
-                            <Link className="text-secondary" to="/login">
-                                Login
-                            </Link>
-                        </p>
+
                     </fieldset>
                 </form>
+
+                <p className="font-semibold  text-center">
+                    Already Have An Account ?{" "}
+                    <Link className="text-secondary" to="/login">
+                        Login
+                    </Link>
+                </p>
             </div>
         </div>
     );
