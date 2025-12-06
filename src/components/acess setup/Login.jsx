@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../../Provider/AuthProvider";
+import { toast } from "react-toastify";
 
 const Login = () => {
     const [error, setError] = useState("");
@@ -9,7 +10,8 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
 
-    // The page the user tried to access before login
+    const notify = () => toast("You are Logged in!");
+
     const from = location.state?.from?.pathname || "/";
 
     const handleLogin = (e) => {
@@ -20,10 +22,9 @@ const Login = () => {
 
         signIn(email, password)
             .then((result) => {
-                const loggedUser = result.user;
-                // console.log("Logged in user:", loggedUser);
                 form.reset();
-                setLoading(true); // optional if you have a loading state
+                setLoading(false); // optional if you have a loading state
+                toast.success("Login Successful!");
 
                 // Redirect to the original page or default "/"
                 navigate(from, { replace: true });
@@ -75,12 +76,13 @@ const Login = () => {
 
                 <p className="font-semibold text-center pt-2">
                     Don’t have an account?{" "}
-                    <Link className="text-indigo-600" to="/register">
+                    <Link className="text-secondary" to="/register">
                         Register
                     </Link>
                 </p>
             </div>
         </div>
+
     );
 };
 
