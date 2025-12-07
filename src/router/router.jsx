@@ -9,6 +9,7 @@ import Header from "../components/header/Header";
 import Logout from "../components/acess setup/Logout";
 import Register from "../components/acess setup/Register";
 import PrivatRoute from "../Provider/PrivatRoute";
+import SingelCartDetails from "../components/Home/SingelCartDetails";
 
 const router = createBrowserRouter([
     {
@@ -18,15 +19,15 @@ const router = createBrowserRouter([
             {
                 index: true,
                 element: <Home></Home>,
-                loader: ()=> fetch('/Data.json'),                
+                loader: () => fetch('/Data.json'),
             },
             {
-                path : "home",
+                path: "home",
                 element: <Home></Home>,
-                loader: ()=> fetch('/Data.json'),
+                loader: () => fetch('/Data.json'),
             },
             {
-                path:"dashboard",
+                path: "dashboard",
                 element: (
                     <PrivatRoute>
                         <Dashboard />
@@ -34,19 +35,29 @@ const router = createBrowserRouter([
                 )
             },
             {
-                path:"login",
+                path: "login",
                 element: <Login ></Login>
             },
             {
-                path:"logout",
+                path: "logout",
                 element: <Logout ></Logout>
             },
             {
-                path:"register",
+                path: "register",
                 element: <Register ></Register>
             },
             {
-                
+                path: "/skill-details/:id",
+                element:
+                    <PrivatRoute>
+                        <SingelCartDetails></SingelCartDetails>
+                    </PrivatRoute>
+                ,
+                loader: () => fetch('/Data.json'),
+
+            },
+            {
+
             }
         ]
     }
