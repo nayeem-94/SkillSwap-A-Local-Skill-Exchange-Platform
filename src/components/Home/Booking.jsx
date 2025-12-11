@@ -13,7 +13,7 @@ const Booking = () => {
         form.reset();
     }
     return (
-        <div className='flex justify-center items-center my-10'>
+        <div className='flex justify-center bg-cyan-50 items-center py-10'>
             <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl py-7">
                 <h2 className="font-bold text-3xl text-center text-indigo-600">
                     Book your Provider

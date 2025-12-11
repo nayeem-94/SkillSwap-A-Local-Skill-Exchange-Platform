@@ -8,6 +8,7 @@ import { toast } from 'react-toastify';
 const Register = () => {
     const { createUser } = useContext(AuthContext);
     const [nameError, setNameError] = useState("");
+    const [passwordError, setPasswordError] = useState("");
     const navigate = useNavigate();
 
     const handleRegister = (e) => {
@@ -18,11 +19,28 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
 
+        // name validation
         if (name.length < 5) {
             setNameError("Name should be more than 5 characters");
             return;
         } else {
             setNameError("");
+        }
+
+        // password validation
+        if (!/[A-Z]/.test(password)) {
+            setPasswordError("Password must contain at least one uppercase letter");
+            return;
+        }
+        if (!/[a-z]/.test(password)) {
+            setPasswordError("Password must contain at least one lowercase letter");
+            return;
+        }
+        if (password.length < 6) {
+            setPasswordError("Password must be at least 6 characters long");
+            return;
+        } else {
+            setPasswordError("");
         }
 
         createUser(email, password)
@@ -70,6 +88,7 @@ const Register = () => {
                         <input name="password" type="password" className="input w-full" placeholder="Password" required />
 
                         {nameError && <p className="text-red-400 text-xs">{nameError}</p>}
+                        {passwordError && <p className="text-red-400 text-xs">{passwordError}</p>}
 
                         <button type="submit" className="btn mt-4 text-lg text-white bg-indigo-600">
                             Register
