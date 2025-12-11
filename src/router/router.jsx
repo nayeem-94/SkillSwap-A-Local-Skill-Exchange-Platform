@@ -12,6 +12,7 @@ import PrivatRoute from "../Provider/PrivatRoute";
 import SingelCartDetails from "../components/Home/SingelCartDetails";
 import Booking from "../components/Home/Booking";
 import UpdetProfile from "../components/profile/UpdetProfile";
+import ForgetPassword from "../components/acess setup/ForgetPassword";
 
 const router = createBrowserRouter([
     {
@@ -71,6 +72,11 @@ const router = createBrowserRouter([
                     <PrivatRoute>
                         <UpdetProfile></UpdetProfile>
                     </PrivatRoute>
+            },
+            {
+                path:"forgetPassword",
+                element:
+                <ForgetPassword></ForgetPassword>
             }
         ]
     }

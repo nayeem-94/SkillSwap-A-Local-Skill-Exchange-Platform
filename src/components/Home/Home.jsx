@@ -10,7 +10,7 @@ import "swiper/css/navigation";
 
 const Home = () => {
     return (
-        <div className='flex flex-col gap-10 bg-cyan-50' >
+        <div className='flex flex-col gap-10 ' >
             <Heroslider ></Heroslider>
             <Allcard ></Allcard>
             <TopRatedProviders></TopRatedProviders>

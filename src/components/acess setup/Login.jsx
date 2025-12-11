@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router";
+import { Link, NavLink, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { toast } from "react-toastify";
 
@@ -60,9 +60,7 @@ const Login = () => {
                         required
                     />
 
-                    <div>
-                        <a className="link link-hover">Forgot password?</a>
-                    </div>
+
 
                     {error && <p className="text-red-500 text-sm">{error}</p>}
 
@@ -73,10 +71,15 @@ const Login = () => {
                         Login
                     </button>
                 </form>
+                <div className="ml-7 text-secondary">
+                    <NavLink to="/forgetPassword">
+                        <p className="link link-hover" >Forgot password?</p>
+                    </NavLink>
+                </div>
 
-                <p className="font-semibold text-center pt-2">
+                <p className="font-semibold text-center pt-5">
                     Don’t have an account?{" "}
-                    <Link className="text-secondary" to="/register">
+                    <Link className="text-secondary link link-hover" to="/register">
                         Register
                     </Link>
                 </p>

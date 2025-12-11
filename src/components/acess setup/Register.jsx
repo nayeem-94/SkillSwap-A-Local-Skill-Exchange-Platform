@@ -98,7 +98,7 @@ const Register = () => {
 
                 <p className="font-semibold text-center">
                     Already Have An Account?{" "}
-                    <Link className="text-secondary" to="/login">
+                    <Link className="text-secondary link link-hover" to="/login">
                         Login
                     </Link>
                 </p>

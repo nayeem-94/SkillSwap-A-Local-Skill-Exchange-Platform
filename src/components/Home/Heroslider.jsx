@@ -17,24 +17,24 @@ const Heroslider = () => {
       >
         <SwiperSlide>
           <div className="h-90 flex justify-center items-center text-3xl">
-            <img src="/public/work.jpg"></img>
+            <img src="/work.jpg"></img>
           </div>
         </SwiperSlide>
 
         <SwiperSlide>
           <div className="h-90 bg-teal-500 text-white flex justify-center items-center text-3xl">
-            <img src="/public/work2.jpg"></img>
+            <img src="/work2.jpg"></img>
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="h-90 bg-rose-500 text-white flex justify-center items-center text-3xl">
-            <img src="/public/work3.jpg"></img>
+          <div className="h-90flex justify-center items-center text-3xl">
+            <img src="/work3.jpg"></img>
           </div>
         </SwiperSlide>
 
         <SwiperSlide>
-          <div className="h-90 bg-rose-500 text-white flex justify-center items-center text-3xl">
-            <img src="/public/work4.jpg"></img>
+          <div className="h-90 flex justify-center items-center text-3xl">
+            <img src="/work4.jpg"></img>
           </div>
         </SwiperSlide>
       </Swiper>
