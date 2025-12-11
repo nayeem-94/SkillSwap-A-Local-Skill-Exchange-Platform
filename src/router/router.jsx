@@ -10,6 +10,8 @@ import Logout from "../components/acess setup/Logout";
 import Register from "../components/acess setup/Register";
 import PrivatRoute from "../Provider/PrivatRoute";
 import SingelCartDetails from "../components/Home/SingelCartDetails";
+import Booking from "../components/Home/Booking";
+import UpdetProfile from "../components/profile/UpdetProfile";
 
 const router = createBrowserRouter([
     {
@@ -57,7 +59,18 @@ const router = createBrowserRouter([
 
             },
             {
-
+                path: "booking",
+                element: 
+                    <PrivatRoute>
+                        <Booking></Booking>
+                    </PrivatRoute>
+            },
+            {
+                path: "updateProfile",
+                element:
+                    <PrivatRoute>
+                        <UpdetProfile></UpdetProfile>
+                    </PrivatRoute>
             }
         ]
     }

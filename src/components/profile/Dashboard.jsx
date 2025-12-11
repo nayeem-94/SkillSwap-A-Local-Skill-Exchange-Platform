@@ -8,16 +8,11 @@ const Dashboard = () => {
     const navigate = useNavigate();
     const isLoggedIn = !!user;
 
-    // useEffect(() => {
-    //     if (!isLoggedIn) {
-    //         toast.error("You must log in to see the dashboard!");
-    //         // Optional: redirect to login
-    //         navigate("/login", { replace: true });
-    //     }
-    // }, [isLoggedIn, navigate]);
+    
 
     if (!isLoggedIn) return null; // prevent rendering the dashboard content
 
+    console.log(user);
     return (
         <div className='bg-cyan-50 p-10'>
             <div className="max-w-3xl mx-auto p-8 bg-white rounded-2xl">
@@ -43,14 +38,16 @@ const Dashboard = () => {
                         <p className="font-semibold text-indigo-700">
                             Email: <span className="text-gray-800">{user?.email}</span>
                         </p>
-                        <p className="font-semibold text-indigo-700">
+                        {/* <p className="font-semibold text-indigo-700">
                             Phone Number: <span className="text-gray-800">{user?.phoneNumber || "[ No Phone Number provided ]"}</span>
-                        </p>
+                        </p> */}
                     </div>
 
                     {/* Button */}
                     <button className="mt-6 px-6 py-3 cursor-pointer bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-xl shadow-lg transition">
+                       <NavLink to="/updateProfile">
                         Update Your Profile
+                        </NavLink>
                     </button>
                 </div>
             </div>

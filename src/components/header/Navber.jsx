@@ -7,6 +7,7 @@ const Navber = () => {
     const { user, logOut, setLoading } = useContext(AuthContext);
     const [loggingOut, setLoggingOut] = useState(false); // local state for logout spinner
     const navigate = useNavigate();
+    
     const isLoggedIn = !!user;
 
     const userProfile = {
@@ -55,13 +56,16 @@ const Navber = () => {
                 {isLoggedIn ? (
                     <>
                         <div className="relative group">
-                            <img
-                                src={userProfile.avatarUrl}
-                                alt="User Avatar"
-                                className="w-8 h-8 rounded-full border-2 border-indigo-500 cursor-pointer"
-                            />
+                            <NavLink to={"/dashboard"}>
+                                <img
+                                    src={userProfile.avatarUrl}
+                                    alt="User Avatar"
+                                    className="w-8 h-8 rounded-full border-2 border-indigo-500 cursor-pointer"
+                                />
+                            </NavLink>
                             <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 scale-0 group-hover:scale-100 bg-gray-800 text-white text-xs px-2 py-1 rounded-md whitespace-nowrap transition-transform duration-100">
                                 {userProfile.userName}
+
                             </span>
                         </div>
 

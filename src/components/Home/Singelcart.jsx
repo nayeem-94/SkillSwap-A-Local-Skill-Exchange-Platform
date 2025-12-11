@@ -17,7 +17,7 @@ const Singelcart = ({ card }) => {
 
                 <div className="card-actions justify-center mt-6">
                     <NavLink to={`/skill-details/${card.skillId}`}>
-                        <button className="btn text-lg  text-white font-bold bg-gradient-to-r to-indigo-500 from-teal-400 ">View Details</button>
+                        <button className="btn text-lg  text-white font-bold bg-gradient-to-r from-indigo-600 to-purple-600 ">View Details</button>
                     </NavLink>
                 </div>
             </div>
