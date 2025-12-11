@@ -1,14 +1,15 @@
 import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from "react-router";
 import { AuthContext } from '../../Provider/AuthProvider';
-import { updateProfile } from "firebase/auth"; // import this
+import { updateProfile } from "firebase/auth";
 import { toast } from 'react-toastify';
-
+import { Eye, EyeOff } from "lucide-react"; // 👈 import icons
 
 const Register = () => {
     const { createUser } = useContext(AuthContext);
     const [nameError, setNameError] = useState("");
     const [passwordError, setPasswordError] = useState("");
+    const [showPassword, setShowPassword] = useState(false); // 👈 password toggle state
     const navigate = useNavigate();
 
     const handleRegister = (e) => {
@@ -46,7 +47,7 @@ const Register = () => {
         createUser(email, password)
             .then((result) => {
                 const createdUser = result.user;
-                toast.success("Successfully account are created!");
+                toast.success("Successfully account created!");
                 // ✅ Update displayName and photoURL
                 updateProfile(createdUser, {
                     displayName: name,
@@ -62,8 +63,7 @@ const Register = () => {
 
             })
             .catch((error) => {
-                const errorMessage = error.message;
-                alert(errorMessage);
+                toast.error(error.message);
             });
     }
 
@@ -85,7 +85,21 @@ const Register = () => {
                         <input name="email" type="email" className="input w-full" placeholder="Email" required />
 
                         <label className="label">Password</label>
-                        <input name="password" type="password" className="input w-full" placeholder="Password" required />
+                        <div className="relative">
+                            <input
+                                name="password"
+                                type={showPassword ? "text" : "password"}
+                                className="input w-full pr-10"
+                                placeholder="Password"
+                                required
+                            />
+                            <div
+                                className="absolute top-1/2 right-3 -translate-y-1/2 cursor-pointer text-gray-500"
+                                onClick={() => setShowPassword(!showPassword)}
+                            >
+                                {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+                            </div>
+                        </div>
 
                         {nameError && <p className="text-red-400 text-xs">{nameError}</p>}
                         {passwordError && <p className="text-red-400 text-xs">{passwordError}</p>}
@@ -96,7 +110,7 @@ const Register = () => {
                     </fieldset>
                 </form>
 
-                <p className="font-semibold text-center">
+                <p className="font-semibold text-center mt-4">
                     Already Have An Account?{" "}
                     <Link className="text-secondary link link-hover" to="/login">
                         Login

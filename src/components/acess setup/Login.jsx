@@ -2,15 +2,17 @@ import React, { useContext, useState } from "react";
 import { Link, NavLink, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { toast } from "react-toastify";
+import { Eye, EyeOff } from "lucide-react";
+
 
 const Login = () => {
     const [error, setError] = useState("");
     const { signIn, setLoading } = useContext(AuthContext);
+    const [showPassword, setShowPassword] = useState(false);
 
     const navigate = useNavigate();
     const location = useLocation();
 
-    const notify = () => toast("You are Logged in!");
 
     const from = location.state?.from?.pathname || "/";
 
@@ -30,7 +32,7 @@ const Login = () => {
                 navigate(from, { replace: true });
             })
             .catch((error) => {
-                console.error(error);
+                // console.error(error);
                 setError(error.message);
             });
     };
@@ -52,13 +54,21 @@ const Login = () => {
                     />
 
                     <label className="label">Password</label>
-                    <input
-                        name="password"
-                        type="password"
-                        className="input w-full"
-                        placeholder="Password"
-                        required
-                    />
+                    <div className="relative">
+                        <input
+                            name="password"
+                            type={showPassword ? "text" : "password"}
+                            className="input w-full pr-10"
+                            placeholder="Password"
+                            required
+                        />
+                        <div
+                            className="absolute top-1/2 right-3 -translate-y-1/2 cursor-pointer text-gray-500"
+                            onClick={() => setShowPassword(!showPassword)}
+                        >
+                            {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+                        </div>
+                    </div>
 
 
 
