@@ -10,7 +10,7 @@ const ForgetPassword = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-            const form = e.target;
+        const form = e.target;
         const email = form.email.value;
         if (!email) return toast.error("Email is required!");
 
@@ -27,7 +27,7 @@ const ForgetPassword = () => {
         <div className="flex justify-center py-10">
             <div className="card bg-base-100 w-full max-w-sm shadow-2xl py-7">
                 <h2 className="font-bold text-3xl text-center text-indigo-600">
-                    Rest Password
+                    Reset Your Password
                 </h2>
                 <form onSubmit={handleSubmit} className="card-body flex flex-col gap-4">
                     <label className="label">Email</label>
