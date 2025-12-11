@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink, useLoaderData, useParams } from 'react-router';
+import { Star } from "lucide-react";
 
 
 const SingelCartDetails = () => {

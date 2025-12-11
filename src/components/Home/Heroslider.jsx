@@ -1,39 +1,45 @@
-import React from 'react';
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Navigation } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 const Heroslider = () => {
-    return (
-        <>
-            <div className="carousel w-full">
-                <div id="item1" className="carousel-item w-full">
-                    <img
-                        src="https://img.daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.webp"
-                        className="w-full" />
-                </div>
-                <div id="item2" className="carousel-item w-full">
-                    <img
-                        src="https://img.daisyui.com/images/stock/photo-1609621838510-5ad474b7d25d.webp"
-                        className="w-full" />
-                </div>
-                <div id="item3" className="carousel-item w-full">
-                    <img
-                        src="https://img.daisyui.com/images/stock/photo-1414694762283-acccc27bca85.webp"
-                        className="w-full" />
-                </div>
-                <div id="item4" className="carousel-item w-full">
-                    <img
-                        src="https://img.daisyui.com/images/stock/photo-1665553365602-b2fb8e5d1707.webp"
-                        className="w-full" />
-                </div>
-            </div>
-            <div className="flex w-full justify-center gap-2 py-2">
-                <a href="#item1" className="btn btn-xs">1</a>
-                <a href="#item2" className="btn btn-xs">2</a>
-                <a href="#item3" className="btn btn-xs">3</a>
-                <a href="#item4" className="btn btn-xs">4</a>
-            </div>
-        </>
+  return (
+    <div className="w-full">
+      <Swiper
+        navigation={true}
+        pagination={{ clickable: true }}
+        modules={[Navigation, Pagination]}
+        className="mySwiper"
+      >
+        <SwiperSlide>
+          <div className="h-90 flex justify-center items-center text-3xl">
+            <img src="/public/work.jpg"></img>
+          </div>
+        </SwiperSlide>
 
-    );
+        <SwiperSlide>
+          <div className="h-90 bg-teal-500 text-white flex justify-center items-center text-3xl">
+            <img src="/public/work2.jpg"></img>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="h-90 bg-rose-500 text-white flex justify-center items-center text-3xl">
+            <img src="/public/work3.jpg"></img>
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide>
+          <div className="h-90 bg-rose-500 text-white flex justify-center items-center text-3xl">
+            <img src="/public/work4.jpg"></img>
+          </div>
+        </SwiperSlide>
+      </Swiper>
+    </div>
+  );
 };
 
 export default Heroslider;
