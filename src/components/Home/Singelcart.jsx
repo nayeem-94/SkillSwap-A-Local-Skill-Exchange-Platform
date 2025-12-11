@@ -1,5 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router';
+import { Star } from "lucide-react";
+
 
 const Singelcart = ({ card }) => {
     // console.log(card);
@@ -12,7 +14,7 @@ const Singelcart = ({ card }) => {
             </figure>
             <div className="card-body ">
                 <h2 className="text-xl h-12"> <span className='font-bold text-xl'>Skill</span> : {card.skillName}</h2>
-                <h3 className='text-lg mt-2 font-semibold'>Rating :  <span className=' font-bold text-red-500'> ** {card.rating} **   </span></h3>
+                <h3 className='text-lg flex gap-2 mt-2 font-semibold'>Rating :  <span className=' flex items-center  gap-1 font-bold text-yellow-500'>   <Star size={18} /> {card.rating}    </span></h3>
                 <h3 className='text-lg font-semibold'>Price : <span className='text-green-500 font-bold'> {card.price}$ </span></h3>
 
                 <div className="card-actions justify-center mt-6">
